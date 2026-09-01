@@ -1,0 +1,86 @@
+# Multi-level Comprehension Skill .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package-lock
+package-lock.json
+yarn.lock
+
+# Build
+dist/
+build/
+out/
+
+# Coverage
+coverage/
+*.lcov
+
+# Temporary
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Project specific
+test_report.json
+quality_report_*.txt
+test_report_*.txt
