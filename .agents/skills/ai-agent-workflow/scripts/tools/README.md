@@ -6,13 +6,39 @@
 
 ```
 tools/
-├── code_quality_checker.py    # 代码质量检查工具
-├── automated_tester.py        # 自动化测试工具
-├── project_initializer.py     # 项目初始化工具
-└── README.md                  # 本文件
+├── context_builder.py          # ★ 项目上下文构建器（企业级核心）
+├── code_quality_checker.py     # 代码质量检查工具
+├── automated_tester.py         # 自动化测试工具
+├── project_initializer.py      # 项目初始化工具
+└── README.md                   # 本文件
 ```
 
 ## 工具说明
+
+### 0. 项目上下文构建器（★ 企业级核心工具）
+
+**文件:** `context_builder.py`
+
+**功能:**
+- 扫描项目结构，生成带职责推测的目录树
+- 检测技术栈、框架、工程化配置（CI/格式化/测试框架）
+- 读取README摘要和最近Git提交，还原项目演变脉络
+- 自动生成"上下文注入块"——复制给AI即可开始工作
+- 引导生成四个认知文件（PROJECT_BRIEF/ARCHITECTURE/CONVENTIONS/GLOSSARY）
+
+**使用方法:**
+```bash
+# 扫描当前项目并输出到终端
+python tools/context_builder.py
+
+# 扫描指定项目并保存
+python tools/context_builder.py /path/to/project --output CONTEXT.md
+
+# 限制展示的文件数量（默认60）
+python tools/context_builder.py . --max-files 100
+```
+
+**适用场景:** 新接手项目、AI首次接触代码库、大项目开始一个新模块之前。生成结果建议人工修订关键信息后，固化到项目的认知文件体系中。
 
 ### 1. 代码质量检查工具
 

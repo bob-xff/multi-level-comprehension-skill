@@ -3,7 +3,7 @@
 > AI智能体5级使用方法工作流 - 适用于所有AI编程助手和智能体工具
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg)](https://github.com/your-username/multi-level-comprehension-skill)
+[![Version](https://img.shields.io/badge/Version-3.0.0-blue.svg)](https://github.com/bob-xff/multi-level-comprehension-skill)
 
 ## 📋 项目简介
 
@@ -12,8 +12,11 @@
 **核心特点：**
 - 🎯 **5级使用框架** - 从基础代码生成到自主项目管理
 - 🔧 **通用设计** - 适用于所有AI编程工具
-- 📚 **完整文档** - 详细的指南和模板
-- 🛠️ **自动化工具** - 代码质量检查、自动化测试、项目初始化
+- 🧠 **企业级认知注入（v3.0）** - 项目认知文件体系 + 上下文构建器，让AI真正理解项目目的
+- 📋 **需求澄清协议（v3.0）** - 先理解再行动：复述 → 假设 → 澄清 → 方案先行
+- 🔍 **自我审查机制（v3.0）** - 交付前AI自审 + 质量门禁
+- 📚 **完整文档** - 详细的指南、模板与ADR
+- 🛠️ **自动化工具** - 上下文构建、代码质量检查、自动化测试、项目初始化
 
 ## 🚀 快速开始
 
@@ -369,4 +372,4 @@ multi-level-comprehension-skill/
 ---
 
 **最后更新：** 2026年9月
-**版本：** v2.1.0
+**版本：** v3.0.0（企业级增强版）

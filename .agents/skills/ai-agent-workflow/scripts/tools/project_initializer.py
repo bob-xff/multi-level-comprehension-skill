@@ -369,7 +369,7 @@ docker run -p 8000:8000 {config.project_name}
         
         # 创建conftest.py
         if config.language == "python":
-            conftest_content = """
+            conftest_content = '''
 import pytest
 from pathlib import Path
 
@@ -387,27 +387,25 @@ def sample_data():
 def temp_dir(tmp_path):
     """临时目录fixture"""
     return tmp_path
-"""
+'''
             (tests_dir / "conftest.py").write_text(conftest_content, encoding='utf-8')
-            
+
             # 创建示例测试文件
-            test_content = f"""
+            test_content = f'''
 import pytest
 from src.main import app
 
 
 class TestApp:
     """应用测试类"""
-    
+
     def test_app_exists(self):
-        """测试应用是否存在"""
         assert app is not None
-    
+
     def test_index_route(self):
-        """测试首页路由"""
         # 这里添加具体的测试用例
         pass
-"""
+'''
             (tests_dir / "test_app.py").write_text(test_content, encoding='utf-8')
     
     def _create_cicd_config(self, project_dir: Path, config: ProjectConfig):

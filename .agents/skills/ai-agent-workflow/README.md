@@ -1,16 +1,21 @@
-# AI智能体5级用法工作流 Skill
+# AI智能体5级用法工作流 Skill（企业级增强版 v3.0）
+
+> **v3.0 核心升级：** 新增项目认知注入、需求澄清协议（Clarify Protocol）、自我审查（Self-Review）、分层上下文（L0-L2）、ADR 模板等企业级能力。详见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 📁 目录结构
 
 ```
 ai-agent-workflow/
-├── SKILL.md                          # 主技能文件
+├── SKILL.md                          # 主技能文件（方法论核心）
 ├── README.md                        # 使用说明
 ├── CHANGELOG.md                     # 版本变更日志
 ├── assets/
 │   └── quick-reference.md           # 快速参考卡
 ├── references/
 │   ├── detailed-guide.md            # 详细指南
+│   ├── project-brief-template.md    # ★ 项目认知文件模板（四件套）
+│   ├── adr-template.md              # ★ 架构决策记录（ADR）模板
+│   ├── tool-adaptation.md           # 工具适配详细指南
 │   ├── quality-metrics.md           # 质量指标体系
 │   └── team-collaboration.md        # 团队协作指南
 └── scripts/
@@ -20,17 +25,38 @@ ai-agent-workflow/
     │   ├── bug-fix.md             # Bug修复模板
     │   ├── refactor.md            # 代码重构模板
     │   └── architecture.md        # 架构设计模板
-    └── checklists/                  # 检查清单
-        ├── code-review.md          # 代码审查清单
-        ├── testing.md             # 测试验证清单
-        └── security.md            # 安全检查清单
+    ├── checklists/                  # 检查清单
+    │   ├── code-review.md          # 代码审查清单
+    │   ├── testing.md             # 测试验证清单
+    │   └── security.md            # 安全检查清单
+    └── tools/                       # 自动化工具
+        ├── context_builder.py      # ★ 项目上下文构建器
+        ├── code_quality_checker.py # 代码质量检查
+        ├── automated_tester.py     # 自动化测试
+        └── project_initializer.py  # 项目初始化
 ```
 
 ---
 
 ## 🚀 快速开始
 
-### 1. 选择合适的工具
+### 1. 新项目/大项目：先做认知注入（v3.0 核心能力）
+
+```bash
+# 扫描项目，生成上下文包（含认知文件骨架 + 可直接给AI的注入块）
+python scripts/tools/context_builder.py /path/to/your/project --output CONTEXT.md
+```
+
+把 CONTEXT.md 给AI → AI起草四个认知文件 → 人工修订 → 固化到项目根目录。
+此后每个任务都带上认知文件，AI就真正"懂"你的项目了。
+
+### 2. 日常任务：按级别选择工作流
+
+- **第1-2级（小任务）：** 明确需求 → 执行 → 自审
+- **第3-5级（中大任务）：** 走完整七步流程（认知加载 → 澄清 → 规划 → 上下文注入 → 执行 → 自审 → 沉淀）
+- **需求模糊时：** 强制走 Clarify Protocol（复述 → 假设 → 澄清 → 方案先行）
+
+### 3. 选择合适的工具
 
 **本框架适用于所有AI智能体工具**，包括但不限于：
 
@@ -87,7 +113,7 @@ ai-agent-workflow/
 | JetBrains | AI Assistant | IDE深度集成 |
 | 开源需求 | Aider, Tabby, LLaMA Code | 开源，可自定义 |
 
-### 2. 选择合适的级别
+### 4. 选择合适的级别
 
 根据任务复杂度选择使用级别：
 
@@ -99,7 +125,7 @@ ai-agent-workflow/
 | 第4级 | 架构设计、系统优化 | 高 |
 | 第5级 | 端到端功能交付 | 极高 |
 
-### 3. 使用模板
+### 5. 使用模板
 
 根据任务类型选择对应的模板：
 
@@ -108,7 +134,7 @@ ai-agent-workflow/
 - `refactor.md` - 代码重构模板
 - `architecture.md` - 架构设计模板
 
-### 4. 验证结果
+### 6. 验证结果
 
 使用检查清单验证生成的代码：
 
@@ -116,11 +142,12 @@ ai-agent-workflow/
 - `testing.md` - 测试验证清单
 - `security.md` - 安全检查清单
 
-### 5. 企业级功能
+### 7. 企业级功能
 
 对于团队使用，可参考以下文档：
 
-- `CHANGELOG.md` - 版本变更日志
+- `references/project-brief-template.md` - ★ 项目认知文件模板（v3.0核心）
+- `references/adr-template.md` - ★ 架构决策记录模板（v3.0新增）
 - `references/quality-metrics.md` - 质量指标体系
 - `references/team-collaboration.md` - 团队协作指南
 
